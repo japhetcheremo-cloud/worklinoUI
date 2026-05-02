@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Worklino App UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <section class="top">
+      <div class="header">
+        <div class="brand">
+          <div class="logo">W</div>
+          <div>
+            <h1>WORKLINO</h1>
+            <p>Your Work. Your Network.</p>
+          </div>
+        </div>
+        <div class="avatar">👤</div>
+      </div>
+
+      <div class="hero">
+        <h2>Find work and opportunities <span>near you.</span></h2>
+        <p>Jobs, services, products, ads, and local business connections in one simple platform.</p>
+      </div>
+
+      <div class="search-box">
+        <span>🔎</span>
+        <input id="searchInput" type="text" placeholder="Search jobs, services, products..." />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h3>Explore</h3>
+        <button onclick="resetFilter()">Reset</button>
+      </div>
+
+      <div class="categories">
+        <div class="category active" onclick="filterItems('all', this)">
+          <div class="icon">✨</div>
+          <p>All</p>
+        </div>
+        <div class="category" onclick="filterItems('job', this)">
+          <div class="icon">💼</div>
+          <p>Jobs</p>
+        </div>
+        <div class="category" onclick="filterItems('service', this)">
+          <div class="icon">🛠️</div>
+          <p>Services</p>
+        </div>
+        <div class="category" onclick="filterItems('product', this)">
+          <div class="icon">🛒</div>
+          <p>Products</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="quick-actions">
+        <button class="action" onclick="openModal('Create Listing', 'Post a job, service, product, or business advert in minutes.')">
+          <strong>+ Create Listing</strong>
+          <small>Sell, hire, promote</small>
+        </button>
+
+        <button class="action" onclick="openModal('Promote Business', 'Boost your business visibility with featured listings and ads.')">
+          <strong>📣 Promote</strong>
+          <small>Reach nearby users</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h3>Nearby Opportunities</h3>
+        <button onclick="openModal('Nearby', 'Location-based discovery helps users find opportunities around them.')">View</button>
+      </div>
+
+      <div class="list" id="listingContainer"></div>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" onclick="setNav(this, 'Home')"><span>🏠</span>Home</button>
+      <button class="nav-item" onclick="setNav(this, 'Search')"><span>🔎</span>Search</button>
+      <button class="nav-item" onclick="setNav(this, 'Post')"><span>➕</span>Post</button>
+      <button class="nav-item" onclick="setNav(this, 'Messages')"><span>💬</span>Chats</button>
+      <button class="nav-item" onclick="setNav(this, 'Profile')"><span>👤</span>Profile</button>
+    </nav>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="sheet">
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+      <button onclick="closeModal()">Continue</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
